@@ -1,4 +1,6 @@
 import { Config } from '@stencil/core';
+import { postcss } from '@stencil/postcss';
+import autoprefixer from 'autoprefixer';
 
 // https://stenciljs.com/docs/config
 
@@ -14,4 +16,9 @@ export const config: Config = {
       baseUrl: 'https://myapp.local/',
     },
   ],
+  plugins: [
+    postcss({
+      plugins: [autoprefixer()]
+    })
+  ]
 };
