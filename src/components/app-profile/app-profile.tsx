@@ -8,7 +8,7 @@ import { Component, Prop, h } from '@stencil/core';
 export class AppProfile {
   @Prop() name: string;
 
-  normalize = (name: string) => (name ? name.substr(0, 1).toUpperCase() + name.substr(1).toLowerCase() : '');
+  normalize = (name: string) => (name ? name.slice(0, 1).toUpperCase() + name.slice(1).toLowerCase() : '');
 
   render() {
     if (this.name) {
