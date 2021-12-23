@@ -1,6 +1,8 @@
 import { Config } from '@stencil/core';
 import { postcss } from '@stencil/postcss';
+import postcssimport from 'postcss-import';
 import tailwindcss from 'tailwindcss';
+import autoprefixer from 'autoprefixer';
 import purgecss from '@fullhuman/postcss-purgecss';
 
 // https://stenciljs.com/docs/config
@@ -20,7 +22,9 @@ export const config: Config = {
   plugins: [
     postcss({
       plugins: [
+        postcssimport(),
         tailwindcss(),
+        autoprefixer(),
         purgecss({ content: ['./src/**/*.{html,tsx}'] })
       ]
     })

@@ -2,7 +2,3 @@
   /* padding: 10px; */
   @apply p-2.5;
 }
-
-.no-use {
-  @apply p-1;
-}
