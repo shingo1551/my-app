@@ -1,5 +1,5 @@
 import { Component, h } from '@stencil/core';
-import { Route, match } from 'stencil-router-v2';
+import { Route, match } from '@stencil/router';
 import { Router } from '../../shared/router';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, h } from '@stencil/core';
-import { href } from 'stencil-router-v2';
+import { href } from '@stencil/router';
 import { push } from '../../shared/router';
 
 @Component({
