@@ -24,6 +24,9 @@ export class AppRoot {
             <Route path={/nest/}>
               <app-nest />
             </Route>
+            <Route path="/store">
+              <app-store />
+            </Route>
           </Router.Switch>
         </main>
       </div>

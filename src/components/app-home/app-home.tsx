@@ -12,7 +12,7 @@ export class AppHome {
 
   render() {
     return (
-      <div class="app-home">
+      <div>
         <p>
           Welcome to the Stencil App Starter. You can use this starter to build entire apps all with web components using Stencil! Check out our docs on{' '}
           <a href="https://stenciljs.com">stenciljs.com</a> to get started.
@@ -25,6 +25,9 @@ export class AppHome {
 
         <a {...href('/nest')}>
           <button>Nest page</button>
+        </a>
+        <a {...href('/store')}>
+          <button>Store page</button>
         </a>
       </div>
     );

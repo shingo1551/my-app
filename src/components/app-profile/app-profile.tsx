@@ -13,7 +13,7 @@ export class AppProfile {
   render() {
     if (this.name) {
       return (
-        <div class="app-profile">
+        <div>
           <p>Hello! My name is {this.normalize(this.name)}. My name was passed in through a route param!</p>
         </div>
       );
