@@ -21,6 +21,9 @@ export class AppRoot {
               <app-home />
             </Route>
             <Route path={match('/profile/:name')} render={({ name }) => <app-profile name={name} />} />
+            <Route path={match('/nest')}>
+              <app-nest />
+            </Route>
           </Router.Switch>
         </main>
       </div>

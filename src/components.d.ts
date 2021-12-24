@@ -6,7 +6,11 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AppChild {
+    }
     interface AppHome {
+    }
+    interface AppNest {
     }
     interface AppProfile {
         "name": string;
@@ -15,11 +19,23 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAppChildElement extends Components.AppChild, HTMLStencilElement {
+    }
+    var HTMLAppChildElement: {
+        prototype: HTMLAppChildElement;
+        new (): HTMLAppChildElement;
+    };
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
     }
     var HTMLAppHomeElement: {
         prototype: HTMLAppHomeElement;
         new (): HTMLAppHomeElement;
+    };
+    interface HTMLAppNestElement extends Components.AppNest, HTMLStencilElement {
+    }
+    var HTMLAppNestElement: {
+        prototype: HTMLAppNestElement;
+        new (): HTMLAppNestElement;
     };
     interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {
     }
@@ -34,13 +50,19 @@ declare global {
         new (): HTMLAppRootElement;
     };
     interface HTMLElementTagNameMap {
+        "app-child": HTMLAppChildElement;
         "app-home": HTMLAppHomeElement;
+        "app-nest": HTMLAppNestElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
     }
 }
 declare namespace LocalJSX {
+    interface AppChild {
+    }
     interface AppHome {
+    }
+    interface AppNest {
     }
     interface AppProfile {
         "name"?: string;
@@ -48,7 +70,9 @@ declare namespace LocalJSX {
     interface AppRoot {
     }
     interface IntrinsicElements {
+        "app-child": AppChild;
         "app-home": AppHome;
+        "app-nest": AppNest;
         "app-profile": AppProfile;
         "app-root": AppRoot;
     }
@@ -57,7 +81,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-child": LocalJSX.AppChild & JSXBase.HTMLAttributes<HTMLAppChildElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
+            "app-nest": LocalJSX.AppNest & JSXBase.HTMLAttributes<HTMLAppNestElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
         }
