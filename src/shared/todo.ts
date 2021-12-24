@@ -19,20 +19,38 @@ function count() {
   state.count = state.list.reduce((sum, todo) => sum + (todo.done ? 0 : 1), 0);
 }
 
+function loadStorage() {
+  const str = localStorage.getItem('todo');
+  if (str) {
+    const todo = JSON.parse(str);
+    state.list = todo.list;
+  }
+  count();
+}
+
+function saveStorage() {
+  const todo = {
+    list: state.list,
+  };
+  localStorage.setItem('todo', JSON.stringify(todo));
+  count();
+}
+
 export function push(todo: ToDo) {
   state.list.push(todo);
-  count();
+  saveStorage();
 }
 
 export function done(n: number) {
   state.list[n].done = !state.list[n].done;
-  count();
+  saveStorage();
 }
 
 export function archive() {
   state.list = state.list.filter(todo => !todo.done);
+  saveStorage();
 }
 
-count();
+loadStorage();
 
 export default state;
