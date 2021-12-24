@@ -32,6 +32,9 @@ export class AppHome {
         <a {...href('/chart')}>
           <button>Chart page</button>
         </a>
+        <a {...href('/todo')}>
+          <button>Todo page</button>
+        </a>
       </div>
     );
   }

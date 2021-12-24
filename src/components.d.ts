@@ -23,6 +23,13 @@ export namespace Components {
     }
     interface AppStore {
     }
+    interface AppTodo {
+    }
+    interface CheckTodo {
+        "done": boolean;
+        "n": number;
+        "text": string;
+    }
 }
 declare global {
     interface HTMLAppChartElement extends Components.AppChart, HTMLStencilElement {
@@ -67,6 +74,18 @@ declare global {
         prototype: HTMLAppStoreElement;
         new (): HTMLAppStoreElement;
     };
+    interface HTMLAppTodoElement extends Components.AppTodo, HTMLStencilElement {
+    }
+    var HTMLAppTodoElement: {
+        prototype: HTMLAppTodoElement;
+        new (): HTMLAppTodoElement;
+    };
+    interface HTMLCheckTodoElement extends Components.CheckTodo, HTMLStencilElement {
+    }
+    var HTMLCheckTodoElement: {
+        prototype: HTMLCheckTodoElement;
+        new (): HTMLCheckTodoElement;
+    };
     interface HTMLElementTagNameMap {
         "app-chart": HTMLAppChartElement;
         "app-child": HTMLAppChildElement;
@@ -75,6 +94,8 @@ declare global {
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
         "app-store": HTMLAppStoreElement;
+        "app-todo": HTMLAppTodoElement;
+        "check-todo": HTMLCheckTodoElement;
     }
 }
 declare namespace LocalJSX {
@@ -95,6 +116,13 @@ declare namespace LocalJSX {
     }
     interface AppStore {
     }
+    interface AppTodo {
+    }
+    interface CheckTodo {
+        "done": boolean;
+        "n": number;
+        "text": string;
+    }
     interface IntrinsicElements {
         "app-chart": AppChart;
         "app-child": AppChild;
@@ -103,6 +131,8 @@ declare namespace LocalJSX {
         "app-profile": AppProfile;
         "app-root": AppRoot;
         "app-store": AppStore;
+        "app-todo": AppTodo;
+        "check-todo": CheckTodo;
     }
 }
 export { LocalJSX as JSX };
@@ -116,6 +146,8 @@ declare module "@stencil/core" {
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "app-store": LocalJSX.AppStore & JSXBase.HTMLAttributes<HTMLAppStoreElement>;
+            "app-todo": LocalJSX.AppTodo & JSXBase.HTMLAttributes<HTMLAppTodoElement>;
+            "check-todo": LocalJSX.CheckTodo & JSXBase.HTMLAttributes<HTMLCheckTodoElement>;
         }
     }
 }

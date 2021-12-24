@@ -30,6 +30,9 @@ export class AppRoot {
             <Route path="/chart">
               <app-chart />
             </Route>
+            <Route path="/todo">
+              <app-todo />
+            </Route>
           </Router.Switch>
         </main>
       </div>
