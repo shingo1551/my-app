@@ -27,6 +27,9 @@ export class AppRoot {
             <Route path="/store">
               <app-store />
             </Route>
+            <Route path="/chart">
+              <app-chart />
+            </Route>
           </Router.Switch>
         </main>
       </div>

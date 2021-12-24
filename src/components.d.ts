@@ -6,6 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AppChart {
+    }
     interface AppChild {
         "p1": string;
         "p2": string;
@@ -23,6 +25,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAppChartElement extends Components.AppChart, HTMLStencilElement {
+    }
+    var HTMLAppChartElement: {
+        prototype: HTMLAppChartElement;
+        new (): HTMLAppChartElement;
+    };
     interface HTMLAppChildElement extends Components.AppChild, HTMLStencilElement {
     }
     var HTMLAppChildElement: {
@@ -60,6 +68,7 @@ declare global {
         new (): HTMLAppStoreElement;
     };
     interface HTMLElementTagNameMap {
+        "app-chart": HTMLAppChartElement;
         "app-child": HTMLAppChildElement;
         "app-home": HTMLAppHomeElement;
         "app-nest": HTMLAppNestElement;
@@ -69,6 +78,8 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AppChart {
+    }
     interface AppChild {
         "p1"?: string;
         "p2"?: string;
@@ -85,6 +96,7 @@ declare namespace LocalJSX {
     interface AppStore {
     }
     interface IntrinsicElements {
+        "app-chart": AppChart;
         "app-child": AppChild;
         "app-home": AppHome;
         "app-nest": AppNest;
@@ -97,6 +109,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-chart": LocalJSX.AppChart & JSXBase.HTMLAttributes<HTMLAppChartElement>;
             "app-child": LocalJSX.AppChild & JSXBase.HTMLAttributes<HTMLAppChildElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-nest": LocalJSX.AppNest & JSXBase.HTMLAttributes<HTMLAppNestElement>;

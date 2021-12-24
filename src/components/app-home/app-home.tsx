@@ -29,6 +29,9 @@ export class AppHome {
         <a {...href('/store')}>
           <button>Store page</button>
         </a>
+        <a {...href('/chart')}>
+          <button>Chart page</button>
+        </a>
       </div>
     );
   }
