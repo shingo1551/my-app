@@ -7,9 +7,16 @@ import state from '../../shared/store';
   shadow: true,
 })
 export class AppStore {
+  timer: number;
 
-  componentWillLoad() {
-    setInterval(() => state.seconds++, 1000);
+  connectedCallback() {
+    console.log('connectedCallback')
+    this.timer = setInterval(() => state.seconds++, 1000);
+  }
+
+  disconnectedCallback() {
+    console.log('disconnectedCallback')
+    clearInterval(this.timer);
   }
 
   render() {
