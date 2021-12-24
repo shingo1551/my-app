@@ -22,6 +22,10 @@ export class AppHome {
           <button>Profile page</button>
         </a>
         <button onClick={this.onClick}>Click me!</button>
+
+        <a {...href('/nest')}>
+          <button>Nest page</button>
+        </a>
       </div>
     );
   }
