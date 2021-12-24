@@ -31,7 +31,6 @@ export function done(n: number) {
 
 export function archive() {
   state.list = state.list.filter(todo => !todo.done);
-  count();
 }
 
 count();
