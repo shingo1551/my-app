@@ -7,6 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AppChild {
+        "p1": string;
+        "p2": string;
     }
     interface AppHome {
     }
@@ -59,6 +61,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AppChild {
+        "p1"?: string;
+        "p2"?: string;
     }
     interface AppHome {
     }
