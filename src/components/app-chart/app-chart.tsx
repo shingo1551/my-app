@@ -4,10 +4,11 @@ import ApexCharts, { ApexOptions } from 'apexcharts'
 @Component({
   tag: 'app-chart',
   styleUrl: 'app-chart.css',
-  shadow: true,
+  scoped: true,
 })
 export class AppChart {
   div: HTMLDivElement;
+  chart: ApexCharts;
 
   componentDidRender() {
     this.chartRender();
@@ -27,8 +28,12 @@ export class AppChart {
       }
     };
 
-    var chart = new ApexCharts(this.div, options);
-    chart.render();
+    this.chart = new ApexCharts(this.div, options);
+    this.chart.render();
+  }
+
+  disconnectedCallback() {
+    this.chart.destroy();
   }
 
   render() {
